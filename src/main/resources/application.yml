@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/springbatchexample?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+
+#config batchjob
+sftp:
+  #  privateKey: classpath:keys/sftp_rsa
+  #  privateKeyPassphrase: passphrase
+  host: 127.0.0.1
+  user: songhj
+  password: songhj
+  file:
+    path:
+      remote:
+        send: /send/
+        get: /get/
+      local:
+        send: /UserProject/send/
+        get:  /UserProject/get/
+    suffix: .csv
+    header: userid; username; password;country
